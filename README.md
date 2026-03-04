@@ -18,9 +18,3 @@ An AI-powered mock interview platform that asks questions and evaluates candidat
 frontend/ - React UI  
 backend/ - Express API  
 ai-engine/ - AI services
-
-
-
-echo "// frontend entry" >> frontend/app.txt
-echo "// backend entry" >> backend/app.txt
-echo "# ai engine" >> ai-engine/app.txt
