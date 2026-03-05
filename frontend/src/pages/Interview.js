@@ -16,10 +16,12 @@ function Interview() {
 
   return (
     <div>
-      <h2>Interview Page</h2>
-      <p>{message}</p>
+      <h2>AI Interview Assistant</h2>
+      <p>Server Status: {message}</p>
     </div>
   );
 }
 
+
 export default Interview;
+
