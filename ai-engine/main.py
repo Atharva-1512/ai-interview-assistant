@@ -9,3 +9,9 @@ def read_root():
 @app.get("/health")
 def health():
     return {"status": "AI service active"}
+
+
+@app.get("/generate-question")
+def generate_question():
+    question = "Explain the difference between REST API and GraphQL."
+    return {"question": question}    
