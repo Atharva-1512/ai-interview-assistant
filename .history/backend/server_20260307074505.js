@@ -33,8 +33,3 @@ const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-res.json({
-  source: "AI Engine",
-  question: response.data.question
-});
