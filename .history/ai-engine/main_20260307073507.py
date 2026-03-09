@@ -15,3 +15,14 @@ def health():
 def generate_question():
     question = "Explain the difference between REST API and GraphQL."
     return {"question": question}    
+    
+@app.post("/evaluate-answer")
+def evaluate_answer(data: dict):
+    answer = data.get("answer")
+
+    feedback = f"Your answer '{answer}' shows understanding of APIs. Try including examples for better clarity."
+
+    return {
+        "feedback": feedback,
+        "score": 7
+    }    

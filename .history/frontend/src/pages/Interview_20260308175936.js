@@ -15,21 +15,23 @@ function Interview() {
   };
 
   return (
+    
     <div>
       <h2>AI Interview Assistant</h2>
 
       <button onClick={fetchQuestion}>
-        Generate Interview Question
+        Get AI Interview Question
       </button>
 
       {question && (
-        <div>
+        <div style={{ marginTop: "20px" }}>
           <h3>Question:</h3>
           <p>{question}</p>
         </div>
       )}
 
     </div>
+    
   );
 }
 
