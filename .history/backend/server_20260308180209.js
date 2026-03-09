@@ -27,3 +27,21 @@ app.get("/question", (req, res) => {
 app.listen(5000, () => {
     console.log("Server running on port 5000");
 });
+
+
+app.post("/evaluate", async (req, res) => {
+  try {
+    const response = await axios.post(
+      "http://127.0.0.1:8000/evaluate-answer",
+      {
+        answer: req.body.answer
+      }
+    );
+
+    res.json(response.data);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "AI evaluation error" });
+  }
+});
