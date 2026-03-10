@@ -14,13 +14,9 @@ function Interview() {
   };
 
   const submitAnswer = async () => {
-  const res = await evaluateAnswer(answer);
-  setFeedback(res.data.feedback);
-  setScore(res.data.score);
-};
-{score !== null && (
-  <h4>Score: {score}/10</h4>
-)}
+    const res = await evaluateAnswer(answer);
+    setFeedback(res.data.feedback);
+  };
 
   return (
     <div>

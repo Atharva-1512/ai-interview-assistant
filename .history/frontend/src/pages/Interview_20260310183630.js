@@ -18,9 +18,6 @@ function Interview() {
   setFeedback(res.data.feedback);
   setScore(res.data.score);
 };
-{score !== null && (
-  <h4>Score: {score}/10</h4>
-)}
 
   return (
     <div>
