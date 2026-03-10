@@ -29,21 +29,3 @@ app.get("/question", (req, res) => {
 app.listen(5000, () => {
     console.log("Server running on port 5000");
 });
-
-
-app.post("/upload-resume", upload.single("resume"), async (req, res) => {
-  try {
-    const filePath = req.file.path;
-
-    const response = await axios.post(
-      "http://127.0.0.1:8000/generate-resume-question",
-      { filePath }
-    );
-
-    res.json(response.data);
-
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Resume processing error" });
-  }
-});
