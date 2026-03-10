@@ -48,14 +48,3 @@ def evaluate_answer(data: dict):
         "feedback": feedback,
         "score": score
     } 
-
-
-@app.post("/generate-resume-question")
-def generate_resume_question(data: dict):
-
-    # Simulated resume-based question
-    question = "Your resume mentions React and Node.js. Can you explain how REST APIs work in a full-stack application?"
-
-    return {
-        "question": question
-    }
