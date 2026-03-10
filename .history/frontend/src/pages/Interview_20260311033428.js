@@ -81,17 +81,3 @@ const uploadResume = async (event) => {
   const data = await res.json();
   setResumeQuestion(data.question);
 };
-
-
-
-
-<h3>Upload Resume for Personalized Questions</h3>
-
-<input type="file" onChange={uploadResume} />
-
-{resumeQuestion && (
-  <div>
-    <h3>Resume Based Question</h3>
-    <p>{resumeQuestion}</p>
-  </div>
-)}
