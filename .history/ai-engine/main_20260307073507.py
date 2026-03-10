@@ -18,11 +18,33 @@ def generate_question():
     
 @app.post("/evaluate-answer")
 def evaluate_answer(data: dict):
-    answer = data.get("answer")
+    answer = data.get("answer", "")
 
-    feedback = f"Your answer '{answer}' shows understanding of APIs. Try including examples for better clarity."
+    score = 0
+    feedback = ""
+
+    if len(answer) > 20:
+        score += 3
+    else:
+        feedback += "Your answer is too short. Try explaining more. "
+
+    keywords = ["api", "request", "response", "data", "server"]
+
+    keyword_count = sum(word in answer.lower() for word in keywords)
+
+    score += keyword_count
+
+    if keyword_count > 2:
+        feedback += "Good use of technical terms. "
+    else:
+        feedback += "Try including more technical keywords. "
+
+    if score > 6:
+        feedback += "Overall this is a strong answer."
+    else:
+        feedback += "Your answer needs more depth."
 
     return {
         "feedback": feedback,
-        "score": 7
-    }    
+        "score": score
+    } 
