@@ -1,6 +1,12 @@
 from fastapi import FastAPI
+import openai
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.get("/")
 def read_root():
@@ -13,7 +19,18 @@ def health():
 
 @app.get("/generate-question")
 def generate_question():
-    question = "Explain the difference between REST API and GraphQL."
+
+    prompt = "Generate one technical interview question for a software engineering candidate."
+
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+
+    question = response["choices"][0]["message"]["content"]
+
     return {"question": question}    
     
 @app.post("/evaluate-answer")
