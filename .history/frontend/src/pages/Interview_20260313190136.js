@@ -479,7 +479,7 @@ function Interview() {
             {resumeQuestion && (
               <div className="iv-resume-result">
                 <span className="iv-resume-result-icon">✦</span>
-                <p>{resumeQuestion}[currentIndex]</p>
+                <p>{resumeQuestion}</p>
               </div>
             )}
           </div>
