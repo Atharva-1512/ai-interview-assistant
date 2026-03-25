@@ -40,6 +40,25 @@ app.post("/evaluate", async (req, res) => {
 
     res.json(response.data);
 
+//  catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "AI evaluation error" });
+//   }
+
+
+
+
+
+//  catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "AI evaluation error" });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "AI evaluation error" });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "AI evaluation error" });
+//   }
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "AI evaluation error" });
